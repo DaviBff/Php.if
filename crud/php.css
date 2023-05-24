@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(41, 206, 206);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.box{
+    box-shadow: 1px 1px 5px 1px;
+    background-color: white;
+    border-radius: 8px;
+    
+}
+legend{
+    font-size: 15pt;
+    background-color: white;
+    border: 1px solid black;
+    text-align: left;
+    
+}
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+  
+    
+    
+}
+
+.btn{
+    margin-top: 8px;
+}

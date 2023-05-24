@@ -1,0 +1,25 @@
+header{
+  
+    box-shadow: 5px 5px 5px 5px aquamarine;
+}
+
+menu ul{
+    display: flex;
+    justify-content: flex-end;
+    background-color: aquamarine;
+    
+    
+
+}
+
+.txt{
+    margin-top: 15px;
+}
+
+li{
+    margin: 10px;
+}
+
+li a{
+    color: black;
+}
