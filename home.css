@@ -1,0 +1,59 @@
+body{
+    background-color:#b7aeff;
+}
+
+header{
+  
+    box-shadow: inset 29px 29px 58px #000000,
+    inset -29px -29px 58px #000000;
+}
+
+menu ul{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+   
+    height: 4em;
+    
+    
+
+}
+.link{
+    font-size: 23px;
+    margin-right: 1em;
+    text-decoration: none;
+    color: white
+}
+
+.txt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 15px;
+    border-radius: 44px;
+    background: #b7aeff;
+    box-shadow: inset 29px 29px 58px #8983bf,
+    inset -29px -29px 58px #e5daff;
+    width: 350px;
+    height: 400px;
+}
+
+.txtContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin-left: 2em;
+
+}
+
+li{
+    margin: 10px;
+}
+
+li a{
+    color: black;
+}
