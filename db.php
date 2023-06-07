@@ -10,7 +10,7 @@ function insereUsuario ($nome,$email,$senha){
         $con=conectaBD();
 
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO usuario (nome,login,senha) VALUES (?,?,?)";
+    $sql = "INSERT INTO usuario (nome,email,senha) VALUES (?,?,?)";
 
     $stm=$con->prepare($sql);
     $stm->bindParam(1,$nome);
@@ -61,5 +61,30 @@ function insereUsuario ($nome,$email,$senha){
         $stm->execute();
         $result=$stm->fetchAll(PDO::FETCH_ASSOC);
         return $result;
+    }
+
+    function verificarCredenciais($email, $senha) {
+        $con=conectaBD();
+       
+        // Consulta SQL para verificar as credenciais
+        $sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
+        $stm= $con->prepare($sql);
+        $stm->bindParam(1,$email);
+        $stm->bindParam(2,$senha);
+        $stm->execute();
+        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        
+       
+        // Verifica se a consulta retornou algum resultado
+        if (count($result) > 0) {
+            // As credenciais são válidas
+        
+            return true;
+        } else {
+            // As credenciais são inválidas
+        
+        
+            return false;
+        }
     }
  ?>

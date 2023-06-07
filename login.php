@@ -1,19 +1,18 @@
 
 
-<?php
-$email = $_POST['email'];
-$password = $_POST['password'];
 
-if( $email == "Davi" && $password == "123456"){
-    echo "Login Efetuado";
-    session_start();
-    $_SESSION['email'] = $email;
-    echo "<script>setTimeout(
-        function(){ window.location.href='home.php'});
-          </script>";
-} else {
-    echo "Login ou Senha invalidos!";
-}
+ <?php
+    include_once "db.php";
 
-
-?>
+    
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+       
+    if (verificarCredenciais($email, $senha)){
+      session_start();
+      $_SESSION['email'] = $email;
+      header('Location:home.php'); 
+    }else {
+      header('Location:index.html');
+    }
+    ?>

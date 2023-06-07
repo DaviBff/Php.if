@@ -21,7 +21,7 @@ body{
 	box-shadow:  24px 24px 53px #474476,
 	-24px -24px 53px #b7aeff;
 	
-	padding:80px 70px;
+	padding: 70px 80px 35px;
 }
 .input-container{
 	position:relative;
@@ -57,13 +57,22 @@ body{
     color: #fff;
 	padding:10px 20px;
 	text-transform:uppercase;
-	margin-top:50px;
+	margin-top:15px;
 	border-radius:2px;
+	margin-bottom: 8px;
 	cursor:pointer;
 	position:relative;
 }
 .btn:hover{
 	color: rosybrown;
+}
+.link{
+	text-decoration:none;
+	color: #551A8D;
+}
+.link:hover{
+	text-decoration: underline;
+	color: #7b34bd;
 }
 .input-container input:focus ~ label,
 .input-container input:valid ~ label{
