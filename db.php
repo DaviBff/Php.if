@@ -5,36 +5,58 @@ function conectaBD(){
     return $con;
 }
 
-function insereUsuario ($nome,$email,$senha){
+function insereUsuario ($nome,$email,$senha,$dataFormatada,$tele){
     try{
         $con=conectaBD();
 
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO usuario (nome,email,senha) VALUES (?,?,?)";
+    $sql = "INSERT INTO usuario (nome,email,senha,data_nascimento,telefone) VALUES (?,?,?,?,?)";
 
     $stm=$con->prepare($sql);
     $stm->bindParam(1,$nome);
     $stm->bindParam(2,$email);
     $stm->bindParam(3,$senha);
+    $stm->bindParam(4,$dataFormatada);
+    $stm->bindParam(5,$tele);
     $stm->execute();
+    
     } catch(PDOExeption $e) {
         echo 'ERROR: '. $e->getMessage();
-
+    
     }
     
-    
-
     return $con->lastInsertId();
 }
 
+function atualizaUsuario($id, $nome, $email, $senha ,$dataFormatada, $tele) {
+    $con = conectaBD();
+    $sql = "UPDATE usuario SET nome = ?, email = ?, senha = ?, data_nascimento = ?, telefone = ? WHERE id = ?";
+    try {
+        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stm = $con->prepare($sql);
+        $stm->bindParam(1, $nome);
+        $stm->bindParam(2, $email);
+        $stm->bindParam(3, $senha);
+        $stm->bindParam(4,$dataFormatada);
+        $stm->bindParam(5,$tele);
+        $stm->bindParam(6, $id);
+        $stm->execute();
+        
+    } catch (PDOException $e) {
+        echo 'ERROR: ' . $e->getMessage();
+    }
+}
+
+
+
     function deletaUsuario($id){
         $con=conectaBD();
-        $sql="DELETE FROM usuario WHERE id=?";
+        $sql="DELETE FROM usuario WHERE id= ?";
         try{
             $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stm->bindParam(1,$id);
+            $stm = $con->prepare($sql); // Correção: criar a declaração preparada corretamente
+            $stm->bindParam(1, $id);
             $stm->execute();
-
         }catch (PDOException $e){
 
             echo 'ERROR: '. $e->getMessage();
@@ -42,15 +64,30 @@ function insereUsuario ($nome,$email,$senha){
         }
     }
 
-    function recuperaUsuario($id){
-        $con=conectaBD();
-        $sql="SELECT * FROM usuario WHERE id=?";
-        $stm=$con->prepare($sql);
-        $stm->bindParam(1,$id);
-        $stm->execute();
-        $result=$stm->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+    
+
+    function recuperaUsuario($id) {
+        $con = conectaBD();
+        $sql = "SELECT * FROM usuario WHERE id = ?";
+        $stm = $con->prepare($sql);
+        $stm->bindParam(1, $id);
+        
+        try {
+            $stm->execute();
+            $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+            if ($result && count($result) > 0) {
+                return $result[0];
+            } else {
+                return null; // Retorna null se nenhum resultado for encontrado
+            }
+        } catch (PDOException $e) {
+            echo 'ERROR: ' . $e->getMessage();
+            return null;
+        }
     }
+    
+
+   
 
     
     function recuperaALL(){
@@ -61,7 +98,14 @@ function insereUsuario ($nome,$email,$senha){
         $stm->execute();
         $result=$stm->fetchAll(PDO::FETCH_ASSOC);
         return $result;
+        
+        
     }
+
+  
+
+    
+
 
     function verificarCredenciais($email, $senha) {
         $con=conectaBD();

@@ -1,8 +1,104 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
 
 body{
-	background-color: #7f79d2
-}
+	background: #7f79d2;
+	
+
+  }
+  
+  
+  .circle{
+	position: absolute;
+	border-radius: 50%;
+	background: black;
+	animation: ripple 15s infinite;
+	box-shadow: 0px 0px 1px 0px #508fb9;
+  }
+  
+  .small{
+	width: 100px;
+	height: 100px;
+	left: -100px;
+	bottom: -100px;
+  }
+  
+  .medium{
+	width: 300px;
+	height: 300px;
+	left: -200px;
+	bottom: -200px;
+  }
+  
+  .large{
+	width: 500px;
+	height: 500px;
+	left: -300px;
+	bottom: -300px;
+  }
+  
+  .xlarge{
+	width: 700px;
+	height: 700px;
+	left: -400px;
+	bottom: -400px;
+  }
+  
+  .xxlarge{
+	width: 900px;
+	height: 900px;
+	left: -500px;
+	bottom: -500px;
+  }
+  
+  .shade1{
+	opacity: 0.2;
+  }
+  .shade2{
+	opacity: 0.5;
+  }
+  
+  .shade3{
+	opacity: 0.7;
+  }
+  
+  .shade4{
+	opacity: 0.8;
+  }
+  
+  .shade5{
+	opacity: 0.9;
+  }
+  
+  @keyframes ripple{
+	0%{
+	  transform: scale(0.8);
+	}
+	
+	50%{
+	  transform: scale(1.2);
+	}
+	
+	100%{
+	  transform: scale(0.8);
+	}
+  }
+
+
+  .form{
+	display: flex;
+	gap: 20px;
+  }
+ 
+
+  .campos{
+	width: 200px;
+  }
+
+.dois{
+	display: flex;
+	flex-direction: column;
+
+  }
 .text-center{
 	color:rgb(0, 0, 0);	
 	text-transform:uppercase;
@@ -11,6 +107,8 @@ body{
     display: block;
     text-align: center;
 }
+
+
 .box{
 	position:absolute;
 	left:50%;
@@ -20,8 +118,7 @@ body{
 	background: #7f79d2;
 	box-shadow:  24px 24px 53px #474476,
 	-24px -24px 53px #b7aeff;
-	
-	padding: 70px 80px 35px;
+	padding: 70px 80px 60px;
 }
 .input-container{
 	position:relative;
@@ -55,10 +152,10 @@ body{
 	outline: none;
     border: 0;
     color: #fff;
-	padding:10px 20px;
+	padding: 10px 20px;
 	text-transform:uppercase;
-	margin-top:15px;
-	border-radius:2px;
+	margin-top: 10px;
+	border-radius: 2px;
 	margin-bottom: 8px;
 	cursor:pointer;
 	position:relative;
@@ -73,6 +170,9 @@ body{
 .link:hover{
 	text-decoration: underline;
 	color: #7b34bd;
+}
+.txtL{
+	margin-top: 15px;
 }
 .input-container input:focus ~ label,
 .input-container input:valid ~ label{

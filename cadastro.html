@@ -1,41 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    
     <link rel="stylesheet" href="php.css">
     <title>Document</title>
 </head>
+
 <body>
+    <div class="ripple-background">
+        <div class="circle xxlarge shade1"></div>
+        <div class="circle xlarge shade2"></div>
+        <div class="circle large shade3"></div>
+        <div class="circle medium shade4"></div>
+        <div class="circle small shade5"></div>
+      </div>
     <div class="box">
-        
-        <form action="cadastro.php"  method="POST"> 
             <span class="text-center">Cadastro</span>
+        <form action="cadastro.php"  method="POST" class="form">
+            
+            <div class="campos um">
+                
+                    <div class="input-container">
+                        <input type="text" name="nome" required="" />
+                        <label>Nome</label>
+                    </div>
 
-            <div class="input-container">
-                <input type="text" name="nome" required=""/>
-                <label>Nome</label>		
-            </div>
+                    <div class="input-container">
+                        <input type="text" name="email" required="" />
+                        <label>Email</label>
+                    </div>
 
-            <div class="input-container">
-                <input type="text" name="email" required=""/>
-                <label>Email</label>		
+                
+
+                    <div class="input-container">
+                        <input type="text" name="telefone" required="" />
+                        <label>Telefone</label>
+                    </div>
             </div>
+            
+            <div class="campos dois" >
+                <div class="input-container">
+                    <input type="text" name="dataNas" id="dataNas" autocomplete="off" required="" />
+                    <label>Data de Nascimento</label>
+                </div>
+
+                <div class="input-container">
+                    <input type="password" name="senha" required="" />
+                    <label>Senha</label>
+                    
+                </div> 
+               <input type="submit" value="Cadastrar" class="btn">
+            </div>
+            
+
+            
         
-            <div class="input-container">
-                <input type="password" name="senha" required=""/>
-                <label>Senha</label>
-            </div>
+        </form>
         
-
-        <input type="submit" value="Cadastrar" class="btn">
-    
-    </form>
-   
     </div>
 
-    
-</body>
-</html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+    <script src="js.js"></script>   
+    <script>
+        $(document).ready(function() {
+          $("#dataNas").datepicker({
+            dateFormat: 'dd/mm/yy', // Define o formato de data desejado
+            showAnim: 'fadeIn', // Define uma animação para exibir o calendário
+            defaultDate: null, // Define a data padrão como null para remover o valor padrão
+          });
+        });
+      </script> 
+</body>
+
+</html>
