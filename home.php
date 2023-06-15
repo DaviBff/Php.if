@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="button.css">
    
     <title>Document</title>
 </head>
@@ -79,7 +80,7 @@ if (isset($_SESSION['resultado'])) {
             echo "<td>" . $row['email'] . "</td>";
             echo "<td>" . $row['telefone'] . "</td>";
             echo "<td>" . $dataFormatada . "</td>";
-            echo "<td><a class='linkF U' href='recuperaUpdate.php?id=" . $row['id'] . "'><span class='icone'></span></a> | <a class='linkF D' href='delete.php?id=" . $row['id'] . "'>Delete</a></td>";
+            echo "<td><a class='linkF ' href='recuperaUpdate.php?id=" . $row['id'] . "'><button  class='button E'>Edit</button></a> | <a class='linkF ' href='delete.php?id=" . $row['id'] . "'><button class='button D'>Delete</button></a></a></td>";
             echo "</tr>";
         }
     } else {
@@ -100,7 +101,7 @@ if (isset($_SESSION['resultado'])) {
             echo "<td>" . $row['email'] . "</td>";
             echo "<td>" . $row['telefone'] . "</td>";
             echo "<td>" . $dataFormatada . "</td>";
-            echo "<td><a class='linkF U' href='recuperaUpdate.php?id=" . $row['id'] . "'>Edit</a> | <a class='linkF D' href='delete.php?id=" . $row['id'] . "'>Delete</a></td>";
+            echo "<td><a class='linkF ' href='recuperaUpdate.php?id=" . $row['id'] . "'><button  class='button E'>Edit</button></a> | <a class='linkF' href='delete.php?id=" . $row['id'] . "'><button class='button D'>Delete</button></a></td>";
             echo "</tr>";
         }
     } else {

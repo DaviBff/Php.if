@@ -62,6 +62,7 @@ h2{
 }
 .tabela ,th ,td {
     box-shadow:  2px 2px 5px black;
+    font-weight: bold;
 }
 .linkF{
     text-decoration: none;

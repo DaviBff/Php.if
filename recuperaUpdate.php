@@ -22,9 +22,7 @@
 
         // Chame a função para obter os dados do usuário por ID
         $usuario = recuperaUsuario($id);
-
-        
-
+        var_dump($usuario);
         // Verifique se o usuário foi encontrado
         if ($usuario) {
             // Atribua os valores dos campos de input às variáveis ​​correspondentes
@@ -59,7 +57,7 @@
                 </div>
 
                 <div class="input-container">
-                    <input type="text" name="telefone" value='<?php echo $tele; ?>'required="" />
+                    <input type="text" name="telefone" value='<?php echo $tele; ?>al'required="" />
                     <label>Telefone</label>
                 </div>
             </div>
