@@ -4,10 +4,19 @@ body{
     background: #7f79d2;
   
 }
-
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 header{
   
     background: #000000;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
 menu ul{
@@ -15,6 +24,19 @@ menu ul{
     align-items: center;
     justify-content: flex-end;  
     height: 4em;
+}
+.userFt{
+    width: 120px;
+    height: auto;
+    margin-top: 1em;
+}
+.ftSearch{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.barraSearch{
+    margin-top: 2.5em;
 }
 .link{
     font-size: 23px;
@@ -62,7 +84,12 @@ h2{
 }
 .tabela ,th ,td {
     box-shadow:  2px 2px 5px black;
+    background-color: #ffffff;
     font-weight: bold;
+    width: 80vw;
+    margin-top: 2em;
+    color: rgb(0, 0, 0);
+    
 }
 .linkF{
     text-decoration: none;
@@ -89,8 +116,14 @@ h2{
 
 
 table {
-    width: 100%;
+    width: 1300px;
     border-collapse: collapse;
+}
+
+.table{
+    height: 300px;
+    width: 500px;
+    border: 5px solid rgb(0, 0, 0);
 }
 th, td {
     padding: 5px;
@@ -98,9 +131,3 @@ th, td {
     text-align: left;
 }
 
-.icone{
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-image: url(edit.png);
-}

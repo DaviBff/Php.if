@@ -22,7 +22,7 @@
 
         // Chame a função para obter os dados do usuário por ID
         $usuario = recuperaUsuario($id);
-        var_dump($usuario);
+        
         // Verifique se o usuário foi encontrado
         if ($usuario) {
             // Atribua os valores dos campos de input às variáveis ​​correspondentes
